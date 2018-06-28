@@ -11,9 +11,7 @@ def listsudo(bot: Bot, update: Update):
     message = update.effective_message
     reply_msg = "**SUDO USERS:**"
     for i in SUDO_USERS:
-       reply_msg += "[{}](tg://user?id={})".format(user.first_name + " " + (user.last_name or ""), user.id)
-         if user.username:
-             name = escape_markdown("@" + user.username) + str(i)
+       reply_msg += "[{}](tg://user?id={})".format(user.first_name + " " + (user.last_name or ""), user.id) + str(i)
 
     message.reply_text(reply_msg)
     return
