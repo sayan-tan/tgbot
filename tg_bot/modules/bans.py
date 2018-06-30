@@ -19,7 +19,6 @@ from tg_bot.modules.helper_funcs.filters import CustomFilters
 @bot_admin
 @can_restrict
 @user_admin
-@loggable
 def ban(bot: Bot, update: Update, args: List[str]) -> str:
     chat = update.effective_chat  # type: Optional[Chat]
     user = update.effective_user  # type: Optional[User]
