@@ -273,6 +273,9 @@ def unban(bot: Bot, update: Update, args: List[str]) -> str:
 
 @run_async
 @bot_admin
+@can_restrict
+@user_admin
+@loggable
 def rban(bot: Bot, update: Update, args: List[str]):
     message = update.effective_message
 
