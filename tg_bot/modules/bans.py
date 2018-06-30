@@ -270,6 +270,9 @@ def unban(bot: Bot, update: Update, args: List[str]) -> str:
 
     return log
 
+
+<<<<<<< HEAD
+=======
 @run_async
 @bot_admin
 def rban(bot: Bot, update: Update, args: List[str]):
@@ -456,6 +459,7 @@ def sban(bot: Bot, update: Update, args: List[str]) -> str:
             LOGGER.exception("ERROR banning user %s in chat %s (%s) due to %s", user_id, chat.title, chat.id, excp.message)       
     return ""
 
+>>>>>>> a546f6d... Introducing Silent Ban /sban
 __help__ = """
  - /kickme: kicks the user who issued the command
 
@@ -473,16 +477,23 @@ TEMPBAN_HANDLER = CommandHandler(["tban", "tempban"], temp_ban, pass_args=True, 
 KICK_HANDLER = CommandHandler("kick", kick, pass_args=True, filters=Filters.group)
 UNBAN_HANDLER = CommandHandler("unban", unban, pass_args=True, filters=Filters.group)
 KICKME_HANDLER = DisableAbleCommandHandler("kickme", kickme, filters=Filters.group)
+<<<<<<< HEAD
+=======
 RBAN_HANDLER = CommandHandler("rban", rban, pass_args=True, filters=CustomFilters.sudo_filter)
 RUNBAN_HANDLER = CommandHandler("runban", runban, pass_args=True, filters=CustomFilters.sudo_filter)
 BANME_HANDLER = DisableAbleCommandHandler("banme", banme, filters=Filters.group)
 SBAN_HANDLER = CommandHandler("sban", sban, pass_args=True, filters=Filters.group)
+>>>>>>> a546f6d... Introducing Silent Ban /sban
+
 dispatcher.add_handler(BAN_HANDLER)
 dispatcher.add_handler(TEMPBAN_HANDLER)
 dispatcher.add_handler(KICK_HANDLER)
 dispatcher.add_handler(UNBAN_HANDLER)
 dispatcher.add_handler(KICKME_HANDLER)
+<<<<<<< HEAD
+=======
 dispatcher.add_handler(RBAN_HANDLER)
 dispatcher.add_handler(RUNBAN_HANDLER)
 dispatcher.add_handler(BANME_HANDLER)
 dispatcher.add_handler(SBAN_HANDLER)
+>>>>>>> a546f6d... Introducing Silent Ban /sban
