@@ -282,17 +282,17 @@ def rban(bot: Bot, update: Update, args: List[str]):
         message.reply_text("You don't seem to be referring to a chat/user.")
         return
 
-    user_id, chat_id = extract_user_and_text(message, args)
+    user_id, group_id = extract_user_and_text(message, args)
 
     if not user_id:
         message.reply_text("You don't seem to be referring to a user.")
         return
-    elif not chat_id:
+    elif not group_id:
         message.reply_text("You don't seem to be referring to a chat.")
         return
 
     try:
-        chat = bot.get_chat(chat_id)
+        chat = bot.get_chat(group_id)
     except BadRequest as excp:
         if excp.message == "Chat not found":
             message.reply_text("Chat not found! Make sure you entered a valid chat ID and I'm part of that chat.")
